@@ -1,7 +1,13 @@
 
 
 var now = moment().format('MMMM Do YYYY');
+var hour = moment().hour();
+console.log(hour);
 $("#currentDay").text(now);
+
+if(hour>=17){
+    $()
+}
 
 window.onload = function(){
     // here we get the value from local storage on pageload by the id and write it to the correct timeblock.
@@ -12,7 +18,7 @@ window.onload = function(){
     $('#10am-timeblock-text').val(tenAmRefresh);
 
     var elevenAmRefresh = localStorage.getItem("11am-timeblock-text")
-    $('11am-timeblock-text').val(elevenAmRefresh);
+    $('#11am-timeblock-text').val(elevenAmRefresh);
     console.log(elevenAmRefresh)
 
     var TwelvePmRefresh = localStorage.getItem("12pm-timeblock-text")
