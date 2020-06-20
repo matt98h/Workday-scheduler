@@ -3,80 +3,43 @@
 var now = moment().format('MMMM Do YYYY');
 $("#currentDay").text(now);
 
+window.onload = function(){
+    // here we get the value from local storage on pageload by the id and write it to the correct timeblock.
+    var nineAmRefresh = localStorage.getItem("9am-timeblock-text")
+    $('#9am-timeblock-text').val(nineAmRefresh);
 
+    var tenAmRefresh = localStorage.getItem("10am-timeblock-text")
+    $('#10am-timeblock-text').val(tenAmRefresh);
 
+    var elevenAmRefresh = localStorage.getItem("11am-timeblock-text")
+    $('11am-timeblock-text').val(elevenAmRefresh);
+    console.log(elevenAmRefresh)
 
-// let userTodo = {
-//     Todo: ""
-// }
+    var TwelvePmRefresh = localStorage.getItem("12pm-timeblock-text")
+    $('#12pm-timeblock-text').val(TwelvePmRefresh);
 
-function saveData() {
-    var nineAmInput = $("#9am-timeblock-text").val();
+    var onePmRefresh = localStorage.getItem("1pm-timeblock-text")
+    $('#1pm-timeblock-text').val(onePmRefresh);
 
-    localStorage.setItem("userInput", nineAmInput);
-    var savedInputNineAm = localStorage.getItem("userInput");
-    console.log("SHOULD SAY HELLO: ", savedInputNineAm);
+    var twoPmRefresh = localStorage.getItem("2pm-timeblock-text")
+    $('#2pm-timeblock-text').val(twoPmRefresh);
 
+    var threePmRefresh = localStorage.getItem("3pm-timeblock-text")
+    $('#3pm-timeblock-text').val(threePmRefresh);
 
-    var tenAmInput = $("#10am-timeblock-text").val();
-    localStorage.setItem("userInput", tenAmInput);
-    var savedInputTenAm = localStorage.getItem("userInput");
-    console.log("SHOULD SAY HELLO: ", savedInputTenAm);
+    var fourPmRefresh = localStorage.getItem("4pm-timeblock-text")
+    $('#4pm-timeblock-text').val(fourPmRefresh);
 
-    var elevenAmInput = $("#11am-timeblock-text").val();
-    localStorage.setItem("userInput", elevenAmInput);
-    var savedInputElevenAm = localStorage.getItem("userInput");
-    console.log("SHOULD SAY HELLO: ", savedInputElevenAm);
-
-    var twelvePmInput = $("#12pm-timeblock-text").val();
-    localStorage.setItem("userInput", twelvePmInput);
-    var savedInputTwelvePm = localStorage.getItem("userInput");
-    console.log("SHOULD SAY HELLO: ", savedInputTwelvePm);
-
-
-    var onePmInput = $("#1pm-timeblock-text").val();
-    localStorage.setItem("userInput", onePmInput);
-    var savedInputOnePm = localStorage.getItem("userInput");
-    console.log("SHOULD SAY HELLO: ", savedInputOnePm);
-
-
-    var twoPmInput = $("#2pm-timeblock-text").val();
-    localStorage.setItem("userInput", twoPmInput);
-    var savedInputTwoPm = localStorage.getItem("userInput");
-    console.log("SHOULD SAY HELLO: ", savedInputTwoPm);
-
-
-    var threePmInput = $("#3pm-timeblock-text").val();
-    localStorage.setItem("userInput", threePmInput);
-    var savedInputThreePm = localStorage.getItem("userInput");
-    console.log("SHOULD SAY HELLO: ", savedInputThreePm);
-
-
-    var fourPmInput = $("#4pm-timeblock-text").val();
-    localStorage.setItem("userInput", fourPmInput);
-    var savedInputFourPm = localStorage.getItem("userInput");
-    console.log("SHOULD SAY HELLO: ", savedInputFourPm);
-
-
-    var fivePmInput = $("#5pm-timeblock-text").val();
-    localStorage.setItem("userInput", fivePmInput);
-    var savedInputFivePm = localStorage.getItem("userInput");
-    console.log("SHOULD SAY HELLO: ", savedInputFivePm);
-
-
-
-
-
-
-
-
-
-
-
-
-    //  if(userInput != ""){
-    //      $("#9am-timeblock").text(userInput);
-    //  }
-
+    var fivePmRefresh = localStorage.getItem("5pm-timeblock-text")
+    $('#5pm-timeblock-text').val(fivePmRefresh);
+}  
+// saves data locally as userInput and saves the input
+// we input an id (when clicked we pass an id of the corresponding timeblock)
+function saveData(id) {
+   
+    var userInput = $("#"+id).val();
+    localStorage.setItem(id, userInput);      
 }
+         
+
 
